@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class EjemploArreglosString {
     public static void main(String[] args) {
@@ -33,6 +34,24 @@ public class EjemploArreglosString {
         // Otra forma de implementar un ciclo for a la inversa:
         for (int i = 0; i < productos.length; i++) {
             System.out.println("para índice " + (productos.length - 1 - i) + " : " + productos[productos.length - 1 - i]);
+        }
+
+        // Invertimos el arreglo
+        String[] productosInvertidos = new String[productos.length];
+        for (int i = 0; i < productos.length; i++) {
+            productosInvertidos[i] = productos[productos.length - 1 - i];
+        }
+
+        // Imprimir los elementos del arreglo invertido
+        for (String producto : productosInvertidos) {
+            System.out.println("producto = " + producto);
+        }
+
+        // Invertir el arreglo usando Collections.reverse()
+        Collections.reverse(Arrays.asList(productos));
+        System.out.println("Arreglo invertido con Collections.reverse()");
+        for (String producto : productos) {
+            System.out.println("producto = " + producto);
         }
     }
 }
